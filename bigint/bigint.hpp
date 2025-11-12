@@ -11,18 +11,8 @@ class bigint {
         std::string valeu;
         std::string addStrings(const std::string &num1, const std::string &num2) const {
             char *end = NULL;
-            long i = std::strtol(num1.c_str(), &end, 0);
-            long j = std::strtol(num2.c_str(), &end, 0);
-            long sum = i + j;
-            // std::cout << "\n Debag : " << i << " + " << j << " = " << sum << "\n";
-            std::string res = "";
-            while (sum > 0)
-            {
-                res += sum % 10 + '0';
-                sum /= 10;
-            }
-            std::reverse(res.begin(), res.end());
-            return res;
+            long sum = std::strtol(num1.c_str(), &end, 0) + std::strtol(num2.c_str(), &end, 0);
+            return std::to_string(sum);
         }
 
         unsigned long long stringToULL(const std::string &str) const {
