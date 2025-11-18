@@ -17,7 +17,6 @@ class bigint {
 
         unsigned long long stringToULL(const std::string &str) const {
             char *end = NULL;
-            errno = 0;
             unsigned long long res = std::strtoul(str.c_str(), &end, 0);
             if (*end != '\0' || str[0] == '-')
                     throw std::invalid_argument("Invalid number format");
